@@ -25,7 +25,13 @@ const createIncrementer = () => {
 };
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = (param) => {
+    return new Promise((rezolve, reject) => {
+        setTimeout(() => rezolve(param), 1300);
+    });
+};
+
+
 const getDeepPropertiesCount = () => {};
 
 const createSerializedObject = () => {
@@ -67,4 +73,6 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Ob
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
 http://interosite.ru/articles/chto-takoe-prototipnoe-nasledovanie-prototipy-obektov-v-javascript
 
+
+https://www.youtube.com/watch?v=SjNmkeUpQAU&index=18&list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q
 */
