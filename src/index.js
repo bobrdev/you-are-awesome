@@ -60,7 +60,20 @@ const returnBackInSecond = (param) => {
 };
 
 
-const getDeepPropertiesCount = () => {};
+const getDeepPropertiesCount = (object) => {
+
+    let DPC = obj => {
+
+        var counter = 0;
+        for (var key in obj) {
+            if(typeof(obj[key]) == typeof({})) counter += DPC(obj[key]);
+            counter++;
+        }
+        return counter;
+    }
+
+    return DPC(object);
+};
 
 const createSerializedObject = () => {
     let object = null;
