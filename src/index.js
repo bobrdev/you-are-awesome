@@ -1,6 +1,8 @@
 // DO WHATEVER YOU WANT HERE
 
-const createEnumerableProperty = (propertyName) => { return propertyName };
+const createEnumerableProperty = (propertyName) => { 
+    return propertyName 
+};
 
 const createNotEnumerableProperty = (propertyName) => {
     Object.defineProperty(Object.prototype, propertyName, {
@@ -9,6 +11,7 @@ const createNotEnumerableProperty = (propertyName) => {
     })
     return propertyName;
 };
+
 const createProtoMagicObject = () => {
     function protoMagicObject(){};
     protoMagicObject.prototype = protoMagicObject.__proto__;
@@ -16,12 +19,37 @@ const createProtoMagicObject = () => {
     return protoMagicObject;
 };
 
-const incrementor = () => {};
+xmen = ['lol', 'kek', 'ded'];
+
+const incrementor = () => {
+    let it = function iter(){
+        let id = 1;
+
+        return {
+            next(){
+                let value = id > 1000 ? undefined : id++;
+                let done = !value;
+                return { value, done };
+            }
+        };
+    
+    }
+
+    return this.it;
+    
+};
+
 const asyncIncrementor = () => {};
 
-
 const createIncrementer = () => {
+    function* incrementor (){
+        for (let number = 1; number <= 10; number++) {
+            yield number;
+        }       
+    }
 
+    return incrementor();
+    
 };
 
 // return same argument not earlier than in one second, and not later, than in two
@@ -35,12 +63,13 @@ const returnBackInSecond = (param) => {
 const getDeepPropertiesCount = () => {};
 
 const createSerializedObject = () => {
-    object = null;
+    let object = null;
     return object;
       
 };
 
 const toBuffer = () => {};
+
 const sortByProto = (arr) => { 
 
     arr = arr.map(function (object){
@@ -75,4 +104,9 @@ http://interosite.ru/articles/chto-takoe-prototipnoe-nasledovanie-prototipy-obek
 
 
 https://www.youtube.com/watch?v=SjNmkeUpQAU&index=18&list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q
+
+
+
+createIncrementer
+https://www.youtube.com/watch?v=Wg-HT25TY_E
 */
