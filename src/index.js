@@ -1,7 +1,7 @@
 // DO WHATEVER YOU WANT HERE
 
-const createEnumerableProperty = (propertyName) => { 
-    return propertyName 
+const createEnumerableProperty = (propertyName) => {
+    return propertyName
 };
 
 const createNotEnumerableProperty = (propertyName) => {
@@ -13,43 +13,40 @@ const createNotEnumerableProperty = (propertyName) => {
 };
 
 const createProtoMagicObject = () => {
-    function protoMagicObject(){};
+    function protoMagicObject() { };
     protoMagicObject.prototype = protoMagicObject.__proto__;
 
     return protoMagicObject;
 };
 
-xmen = ['lol', 'kek', 'ded'];
 
 const incrementor = () => {
-    let it = function iter(){
-        let id = 1;
-
-        return {
-            next(){
-                let value = id > 1000 ? undefined : id++;
-                let done = !value;
-                return { value, done };
-            }
-        };
     
-    }
 
-    return this.it;
-    
 };
 
-const asyncIncrementor = () => {};
+const asyncIncrementor = () => {
+    if (!asyncIncrementor.number) {
+        asyncIncrementor.number = 1;
+    }
+    
+   // return asyncIncrementor.number++;
+   //or
+    return new Promise((rezolve, reject) => {
+        return rezolve(asyncIncrementor.number++);
+    });
+};
 
 const createIncrementer = () => {
-    function* incrementor (){
+    function* incrementor() {
         for (let number = 1; number <= 10; number++) {
             yield number;
-        }       
+        }
     }
 
-    return incrementor();
     
+    return incrementor();
+
 };
 
 // return same argument not earlier than in one second, and not later, than in two
@@ -66,7 +63,7 @@ const getDeepPropertiesCount = (object) => {
 
         var counter = 0;
         for (var key in obj) {
-            if(typeof(obj[key]) == typeof({})) counter += DPC(obj[key]);
+            if (typeof (obj[key]) == typeof ({})) counter += DPC(obj[key]);
             counter++;
         }
         return counter;
@@ -78,22 +75,22 @@ const getDeepPropertiesCount = (object) => {
 const createSerializedObject = () => {
     let object = null;
     return object;
-      
+
 };
 
-const toBuffer = () => {};
+const toBuffer = () => { };
 
-const sortByProto = (arr) => { 
+const sortByProto = (arr) => {
 
-    arr = arr.map(function (object){
+    arr = arr.map(function (object) {
         return object.__proto__;
     });
 
-    arr.sort( function(a, b){
-        return a- b;
+    arr.sort(function (a, b) {
+        return a - b;
     });
 
-    return arr; 
+    return arr;
 
 };
 
